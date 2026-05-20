@@ -1,0 +1,112 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Smooth Scroll */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Hero Background */
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1600&auto=format&fit=crop");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hover Animation */
+.card-hover{
+    transition: 0.4s;
+}
+
+.card-hover:hover{
+    transform: translateY(-10px);
+}
+
+/* Button Hover */
+.custom-btn{
+    transition: 0.3s;
+}
+
+.custom-btn:hover{
+    transform: scale(1.05);
+}
+
+/* Search Inputs */
+.search-box{
+    border: 1px solid #27272a;
+    transition: 0.3s;
+}
+
+.search-box:focus{
+    border-color: orange;
+    box-shadow: 0px 0px 10px orange;
+}
+
+/* Table Styling */
+.compare-table td,
+.compare-table th{
+    padding: 15px;
+}
+
+/* Gallery Hover */
+.gallery-img{
+    transition: 0.4s;
+}
+
+.gallery-img:hover{
+    transform: scale(1.03);
+}
+
+/* FAQ Animation */
+.faq-card{
+    transition: 0.3s;
+}
+
+.faq-card:hover{
+    background-color: #27272a;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: black;
+}
+
+::-webkit-scrollbar-thumb{
+    background: orange;
+    border-radius: 20px;
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+
+    .hero-title{
+        font-size: 40px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
