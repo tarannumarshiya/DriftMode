@@ -8,9 +8,23 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* Force selects dark — Tailwind can't reach OS-native dropdown bg */
-    select option { background: #18181b; color: #ffffff; }
-    select        { color-scheme: dark; }
+    *{
+        font-family: "Poppins", sans-serif;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    /* Force selects dark */
+    select option{
+        background:#18181b;
+        color:#ffffff;
+    }
+
+    select{
+        color-scheme: dark;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -58,7 +72,7 @@
 
         <li><a href="cars.html" class="hover:text-orange-500 duration-300">Cars</a></li>
 
-        <li><a href="speed-comparison.html" class="hover:text-orange-500 duration-300">Speed Comp</a></li>
+        <li><a href="speed-comparison.html" class="hover:text-orange-500 duration-300">Compare</a></li>
 
         <li><a href="features.html" class="hover:text-orange-500 duration-300">Car Features</a></li>
 
