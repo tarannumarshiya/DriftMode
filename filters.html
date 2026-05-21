@@ -6,6 +6,7 @@
   <title>Filters – DRIFTMODES</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
+<<<<<<< HEAD
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *{
@@ -26,18 +27,30 @@
         color-scheme: dark;
     }
   </style>
+=======
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+         <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        </style>
+>>>>>>> dd251c532a485cef6c2a11d761cf44ed06e6d108
 </head>
 <body class="bg-black text-white">
 
-  <!-- NAVBAR -->
-<nav class="bg-zinc-900 sticky top-0 z-50 px-6 md:px-10 py-4 md:py-5 flex flex-wrap justify-between items-center border-b border-zinc-800">
+  <nav class="flex justify-between items-center px-10 py-5 bg-zinc-900 sticky top-0 z-50">
 
-    <!-- LOGO -->
-    <h1 class="text-2xl md:text-3xl font-bold text-orange-500 tracking-widest">
+    <h1 class="text-3xl font-bold text-orange-500">
         <a href="index.html">DRIFTMODES</a>
     </h1>
 
-    <!-- MOBILE MENU -->
     <input type="checkbox" id="menu-toggle" class="hidden peer" />
 
     <label for="menu-toggle"
@@ -58,20 +71,15 @@
         </svg>
     </label>
 
-    <!-- NAV LINKS -->
-    <ul class="w-full md:w-auto hidden peer-checked:flex md:flex flex-col md:flex-row gap-4 md:gap-8 text-sm font-semibold tracking-wider uppercase mt-4 md:mt-0 border-t border-zinc-800 md:border-0 pt-4 md:pt-0">
+    <ul class="flex gap-8 text-lg">
 
-        <li><a href="index.html" class="hover:text-orange-500 duration-300">Home</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
 
-        <li>
-            <a href="filters.html"
-                class="text-orange-500 border-b-2 border-orange-500 pb-1">
-                Filters
-            </a>
-        </li>
+        <li><a href="filters.html" class="nav-link text-orange-500 border-b-2 border-orange-500 pb-1">Filters</a></li>
 
-        <li><a href="cars.html" class="hover:text-orange-500 duration-300">Cars</a></li>
+        <li><a href="cars.html" class="nav-link">Cars</a></li>
 
+<<<<<<< HEAD
         <li><a href="speed-comparison.html" class="hover:text-orange-500 duration-300">Compare</a></li>
 
       
@@ -79,20 +87,24 @@
         <li><a href="reviews.html" class="hover:text-orange-500 duration-300">Reviews</a></li>
 
         <li><a href="contact.html" class="hover:text-orange-500 duration-300">Contact</a></li>
+=======
+        <li><a href="speed-comparison.html" class="nav-link">compare</a></li>
+        <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+>>>>>>> dd251c532a485cef6c2a11d761cf44ed06e6d108
 
     </ul>
 
 </nav>
 
-<!-- PAGE HERO -->
 <section class="text-center py-20 px-5 bg-black">
 
     <p class="text-orange-500 text-sm tracking-[0.4em] uppercase mb-4 font-semibold">
         Find Your Match
     </p>
 
-    <h1 class="text-5xl md:text-6xl font-black mb-5"
-        style="font-family:'Bebas Neue',sans-serif; letter-spacing:0.04em;">
+    <h1 class="text-5xl md:text-6xl font-bold mb-5 tracking-wide">
 
         Advanced Car Filters
 
@@ -103,15 +115,11 @@
     </p>
 
 </section>
-    <!-- FILTER SECTION -->
-
     <section class="px-5 md:px-16 pb-20">
 
         <div class="bg-zinc-900 rounded-3xl p-8 md:p-10 shadow-2xl">
 
             <div class="grid md:grid-cols-3 gap-6">
-
-                <!-- SEARCH -->
 
                 <div>
 
@@ -126,8 +134,6 @@
                         class="search-box w-full p-4 rounded-xl bg-zinc-800 text-white outline-none">
 
                 </div>
-
-                <!-- BRAND -->
 
                 <div>
 
@@ -153,8 +159,6 @@
 
                 </div>
 
-                <!-- FUEL -->
-
                 <div>
 
                     <label class="block mb-3 text-lg font-semibold">
@@ -177,8 +181,6 @@
 
             </div>
 
-            <!-- BUTTONS -->
-
             <div class="flex flex-wrap justify-center gap-5 mt-10">
 
                 <button
@@ -199,77 +201,10 @@
 
             </div>
 
-
-        <!-- Search -->
-        <div>
-          <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-400">🔍 Search Car</label>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="BMW, Tesla, Mustang..."
-            oninput="filterCars()"
-            class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white placeholder-zinc-500 border border-zinc-700 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-200 text-sm font-medium"
-          />
-        </div>
-
-        <!-- Brand -->
-        <div>
-          <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-400">🏷️ Brand</label>
-          <select
-            id="brandFilter"
-            onchange="filterCars()"
-            class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white border border-zinc-700 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-200 text-sm font-medium cursor-pointer appearance-none"
-          >
-            <option value="all">All Brands</option>
-            <option value="BMW">BMW</option>
-            <option value="Tesla">Tesla</option>
-            <option value="Ford">Ford</option>
-            <option value="Lamborghini">Lamborghini</option>
-            <option value="Porsche">Porsche</option>
-            <option value="Mercedes">Mercedes</option>
-          </select>
-        </div>
-
-        <!-- Fuel -->
-        <div>
-          <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-400">⛽ Fuel Type</label>
-          <select
-            id="fuelFilter"
-            onchange="filterCars()"
-            class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white border border-zinc-700 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-200 text-sm font-medium cursor-pointer appearance-none"
-          >
-            <option value="all">All Fuel Types</option>
-            <option value="Petrol">Petrol</option>
-            <option value="Electric">Electric</option>
-            <option value="Diesel">Diesel</option>
-            <option value="Hybrid">Hybrid</option>
-          </select>
-        </div>
-
-        <!-- Sort -->
-        <div>
-          <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-400">↕️ Sort By</label>
-          <select
-            id="sortFilter"
-            onchange="filterCars()"
-            class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white border border-zinc-700 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-200 text-sm font-medium cursor-pointer appearance-none"
-          >
-            <option value="default">Default</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="power-desc">Most Powerful</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Divider -->
-      <hr class="border-zinc-800 mb-8" />
-
-      <!-- Price Range -->
       <div class="mb-8">
         <div class="flex justify-between items-center mb-3">
           <label class="text-xs font-bold uppercase tracking-widest text-gray-400">💰 Max Price</label>
-          <span id="priceDisplay" class="text-orange-500 font-black text-lg">₹2.0 Crore</span>
+          <span id="priceDisplay" class="text-orange-500 font-bold text-lg">₹2.0 Crore</span>
         </div>
         <input
           type="range"
@@ -284,10 +219,8 @@
         </div>
       </div>
 
-      <!-- Divider -->
       <hr class="border-zinc-800 mb-8" />
 
-      <!-- Quick Fuel Tags -->
       <div class="flex gap-3 flex-wrap items-center mb-8">
         <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mr-1">Quick:</span>
         <button onclick="quickFuel('all',this)"      class="filter-tag active">All</button>
@@ -297,7 +230,6 @@
         <button onclick="quickFuel('Hybrid',this)"   class="filter-tag">🌿 Hybrid</button>
       </div>
 
-      <!-- Action Row -->
       <div class="flex items-center gap-5">
         <button
           onclick="resetFilters()"
@@ -311,16 +243,14 @@
     </div>
   </section>
 
-  <!-- CAR GRID -->
   <section class="px-10 py-16 bg-black">
     <div class="flex justify-between items-center mb-10">
-      <h2 class="text-3xl font-black">Results</h2>
+      <h2 class="text-3xl font-bold">Results</h2>
       <span id="resultCountTop" class="text-gray-500 text-sm">6 cars</span>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8" id="carContainer">
 
-      <!-- BMW -->
       <div class="car-card bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800" data-brand="BMW" data-fuel="Petrol" data-price="8500000" data-power="503">
         <div class="relative overflow-hidden h-56">
           <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover card-img" />
@@ -328,16 +258,15 @@
           <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">503 HP</div>
         </div>
         <div class="p-6">
-          <h2 class="car-name text-xl font-black mb-1">BMW M4</h2>
+          <h2 class="car-name text-xl font-bold mb-1">BMW M4</h2>
           <p class="text-zinc-500 text-sm mb-3">0–100 in 3.9s · Top 290 km/h</p>
           <div class="flex items-center justify-between">
-            <p class="text-orange-500 font-black text-xl">₹85L</p>
-            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200">Details →</a>
+            <p class="text-orange-500 font-bold text-xl">₹85L</p>
+            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200">Details →</a>
           </div>
         </div>
       </div>
 
-      <!-- Tesla -->
       <div class="car-card bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800" data-brand="Tesla" data-fuel="Electric" data-price="12000000" data-power="1020">
         <div class="relative overflow-hidden h-56">
           <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover card-img" />
@@ -345,16 +274,15 @@
           <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">1,020 HP</div>
         </div>
         <div class="p-6">
-          <h2 class="car-name text-xl font-black mb-1">Tesla Model S</h2>
+          <h2 class="car-name text-xl font-bold mb-1">Tesla Model S</h2>
           <p class="text-zinc-500 text-sm mb-3">0–100 in 2.1s · Range 628 km</p>
           <div class="flex items-center justify-between">
-            <p class="text-orange-500 font-black text-xl">₹1.2Cr</p>
-            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200">Details →</a>
+            <p class="text-orange-500 font-bold text-xl">₹1.2Cr</p>
+            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200">Details →</a>
           </div>
         </div>
       </div>
 
-      <!-- Mustang -->
       <div class="car-card bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800" data-brand="Ford" data-fuel="Petrol" data-price="7500000" data-power="450">
         <div class="relative overflow-hidden h-56">
           <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover card-img" />
@@ -362,16 +290,15 @@
           <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">450 HP</div>
         </div>
         <div class="p-6">
-          <h2 class="car-name text-xl font-black mb-1">Ford Mustang GT</h2>
+          <h2 class="car-name text-xl font-bold mb-1">Ford Mustang GT</h2>
           <p class="text-zinc-500 text-sm mb-3">0–100 in 4.3s · Top 250 km/h</p>
           <div class="flex items-center justify-between">
-            <p class="text-orange-500 font-black text-xl">₹75L</p>
-            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200">Details →</a>
+            <p class="text-orange-500 font-bold text-xl">₹75L</p>
+            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200">Details →</a>
           </div>
         </div>
       </div>
 
-      <!-- Lamborghini -->
       <div class="car-card bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800" data-brand="Lamborghini" data-fuel="Petrol" data-price="18000000" data-power="630">
         <div class="relative overflow-hidden h-56">
           <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover card-img" />
@@ -379,16 +306,15 @@
           <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">630 HP</div>
         </div>
         <div class="p-6">
-          <h2 class="car-name text-xl font-black mb-1">Lamborghini Huracán</h2>
+          <h2 class="car-name text-xl font-bold mb-1">Lamborghini Huracán</h2>
           <p class="text-zinc-500 text-sm mb-3">0–100 in 2.9s · Top 325 km/h</p>
           <div class="flex items-center justify-between">
-            <p class="text-orange-500 font-black text-xl">₹1.8Cr</p>
-            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200">Details →</a>
+            <p class="text-orange-500 font-bold text-xl">₹1.8Cr</p>
+            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200">Details →</a>
           </div>
         </div>
       </div>
 
-      <!-- Porsche -->
       <div class="car-card bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800" data-brand="Porsche" data-fuel="Hybrid" data-price="15000000" data-power="680">
         <div class="relative overflow-hidden h-56">
           <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover card-img" />
@@ -396,16 +322,15 @@
           <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">680 HP</div>
         </div>
         <div class="p-6">
-          <h2 class="car-name text-xl font-black mb-1">Porsche Taycan</h2>
+          <h2 class="car-name text-xl font-bold mb-1">Porsche Taycan</h2>
           <p class="text-zinc-500 text-sm mb-3">0–100 in 2.8s · Top 260 km/h</p>
           <div class="flex items-center justify-between">
-            <p class="text-orange-500 font-black text-xl">₹1.5Cr</p>
-            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200">Details →</a>
+            <p class="text-orange-500 font-bold text-xl">₹1.5Cr</p>
+            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200">Details →</a>
           </div>
         </div>
       </div>
 
-      <!-- Mercedes -->
       <div class="car-card bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800" data-brand="Mercedes" data-fuel="Diesel" data-price="9500000" data-power="330">
         <div class="relative overflow-hidden h-56">
           <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover card-img" />
@@ -413,30 +338,28 @@
           <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">330 HP</div>
         </div>
         <div class="p-6">
-          <h2 class="car-name text-xl font-black mb-1">Mercedes GLE</h2>
+          <h2 class="car-name text-xl font-bold mb-1">Mercedes GLE</h2>
           <p class="text-zinc-500 text-sm mb-3">0–100 in 5.7s · 7 Seats</p>
           <div class="flex items-center justify-between">
-            <p class="text-orange-500 font-black text-xl">₹95L</p>
-            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200">Details →</a>
+            <p class="text-orange-500 font-bold text-xl">₹95L</p>
+            <a href="features.html" class="bg-orange-500 hover:bg-orange-400 text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200">Details →</a>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- No Results -->
     <div id="noResults" class="hidden text-center py-24">
       <div class="text-6xl mb-4">🚗</div>
-      <h3 class="text-2xl font-black mb-2">No Cars Found</h3>
+      <h3 class="text-2xl font-bold mb-2">No Cars Found</h3>
       <p class="text-zinc-500">Try adjusting your filters above</p>
       <button onclick="resetFilters()" class="mt-6 bg-orange-500 text-black px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-orange-400 transition-all">Reset Filters</button>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="bg-zinc-950 border-t border-zinc-800 px-10 py-8">
     <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-black text-orange-500 tracking-widest logo">DRIFTMODES</h2>
+      <h2 class="text-2xl font-bold text-orange-500 tracking-widest logo">DRIFTMODES</h2>
       <p class="text-gray-500 text-sm">© 2026 All Rights Reserved</p>
     </div>
   </footer>
@@ -453,7 +376,7 @@
       const brand  = document.getElementById('brandFilter').value;
       const fuel   = document.getElementById('fuelFilter').value;
       const maxP   = parseInt(document.getElementById('priceRange').value);
-      const sort   = document.getElementById('sortFilter').value;
+      const sort   = document.getElementById('sortFilter') ? document.getElementById('sortFilter').value : 'default';
 
       let cards   = Array.from(document.querySelectorAll('.car-card'));
       let visible = [];
@@ -492,7 +415,7 @@
       document.getElementById('searchInput').value = '';
       document.getElementById('brandFilter').value = 'all';
       document.getElementById('fuelFilter').value  = 'all';
-      document.getElementById('sortFilter').value  = 'default';
+      if(document.getElementById('sortFilter')) document.getElementById('sortFilter').value  = 'default';
       document.getElementById('priceRange').value  = 20000000;
       updatePrice(20000000);
       document.querySelectorAll('.filter-tag').forEach((t,i) => t.classList.toggle('active', i===0));
