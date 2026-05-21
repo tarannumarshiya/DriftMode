@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews – DRIFTMODES</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-black text-white">
+
+  <!-- NAVBAR -->
+  <nav class="navbar flex justify-between items-center px-10 py-5 sticky top-0 z-50 border-b border-zinc-800">
+    <a href="index.html"><h1 class="logo text-3xl font-black text-orange-500 tracking-widest">DRIFTMODES</h1></a>
+    <ul class="flex gap-8 text-sm font-semibold tracking-wider uppercase">
+            <li><a href="index.html" class="nav-link active-link">Home</a></li>
+            <li><a href="filters.html" class="nav-link">Filters</a></li>
+            <li><a href="cars.html" class="nav-link">Cars</a></li>
+            <li><a href="speed-comparison.html" class="nav-link">Speed Comp</a></li>
+            <li><a href="features.html" class="nav-link">Car Features</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <p class="text-orange-500 text-sm tracking-[0.4em] uppercase mb-3 font-semibold">Real Owners. Real Opinions.</p>
+    <h1 class="text-5xl font-black mb-3" style="font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;">Reviews & Ratings</h1>
+    <p class="text-gray-400 text-lg">Honest reviews from car enthusiasts around the world</p>
+  </div>
+
+  <!-- RATING SUMMARY -->
+  <section class="bg-zinc-950 px-10 py-16">
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="bg-zinc-900 rounded-2xl p-8 text-center border border-zinc-800">
+        <div class="text-6xl font-black text-orange-500 mb-2">4.7</div>
+        <div class="stars mb-2">★★★★★</div>
+        <p class="text-gray-400 text-sm">Overall Rating</p>
+        <p class="text-gray-500 text-xs mt-1">Based on 10,240 reviews</p>
+      </div>
+      <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-widest text-gray-400">Rating Breakdown</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-400 w-4">5★</span>
+            <div class="speed-bar-bg flex-1"><div class="speed-bar-fill" style="width:72%"></div></div>
+            <span class="text-xs text-gray-400">72%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-400 w-4">4★</span>
+            <div class="speed-bar-bg flex-1"><div class="speed-bar-fill" style="width:18%"></div></div>
+            <span class="text-xs text-gray-400">18%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-400 w-4">3★</span>
+            <div class="speed-bar-bg flex-1"><div class="speed-bar-fill" style="width:7%"></div></div>
+            <span class="text-xs text-gray-400">7%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-400 w-4">2★</span>
+            <div class="speed-bar-bg flex-1"><div class="speed-bar-fill" style="width:2%"></div></div>
+            <span class="text-xs text-gray-400">2%</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-400 w-4">1★</span>
+            <div class="speed-bar-bg flex-1"><div class="speed-bar-fill" style="width:1%"></div></div>
+            <span class="text-xs text-gray-400">1%</span>
+          </div>
+        </div>
+      </div>
+      <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+        <h3 class="font-bold mb-4 text-sm uppercase tracking-widest text-gray-400">Category Scores</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between"><span class="text-sm text-gray-400">Performance</span><span class="text-orange-500 font-bold">4.9</span></div>
+          <div class="flex justify-between"><span class="text-sm text-gray-400">Comfort</span><span class="text-orange-500 font-bold">4.5</span></div>
+          <div class="flex justify-between"><span class="text-sm text-gray-400">Value</span><span class="text-orange-500 font-bold">4.3</span></div>
+          <div class="flex justify-between"><span class="text-sm text-gray-400">Technology</span><span class="text-orange-500 font-bold">4.8</span></div>
+          <div class="flex justify-between"><span class="text-sm text-gray-400">Design</span><span class="text-orange-500 font-bold">4.7</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="flex gap-3 mb-10 flex-wrap">
+      <span class="text-xs font-bold uppercase tracking-widest text-gray-400 self-center mr-2">Filter:</span>
+      <button class="filter-tag active" onclick="filterReviews('all',this)">All Cars</button>
+      <button class="filter-tag" onclick="filterReviews('BMW M4',this)">BMW M4</button>
+      <button class="filter-tag" onclick="filterReviews('Tesla Model S',this)">Tesla Model S</button>
+      <button class="filter-tag" onclick="filterReviews('Ford Mustang',this)">Ford Mustang</button>
+      <button class="filter-tag" onclick="filterReviews('Lamborghini',this)">Lamborghini</button>
+      <button class="filter-tag" onclick="filterReviews('Porsche',this)">Porsche</button>
+    </div>
+
+    <!-- REVIEW CARDS -->
+    <div class="grid md:grid-cols-3 gap-8" id="reviewGrid">
+
+      <div class="review-card" data-car="BMW M4">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="font-bold text-lg">BMW M4</h3>
+            <p class="text-gray-500 text-sm">Rohit S. · Mumbai</p>
+          </div>
+          <div class="stars text-base">★★★★★</div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          The M4 is an absolute beast on the road. The twin-turbo inline-6 pulls like a freight train and the handling is razor sharp. Worth every rupee.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-petrol">Performance</span>
+          <span class="text-xs text-gray-500">March 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card" data-car="Tesla Model S">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="font-bold text-lg">Tesla Model S Plaid</h3>
+            <p class="text-gray-500 text-sm">Ananya K. · Bangalore</p>
+          </div>
+          <div class="stars text-base">★★★★★</div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          Insane acceleration, immaculate tech, and the Autopilot is genuinely impressive. Range anxiety is a thing of the past with 600km+ on a single charge.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-electric">Electric</span>
+          <span class="text-xs text-gray-500">February 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card" data-car="Ford Mustang">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="font-bold text-lg">Ford Mustang GT</h3>
+            <p class="text-gray-500 text-sm">Vikram P. · Delhi</p>
+          </div>
+          <div class="stars text-base">★★★★☆</div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          Nothing beats the V8 rumble at a traffic light. The Mustang is pure American muscle with iconic design. Interior could be more premium but the drive is spectacular.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-petrol">Muscle Car</span>
+          <span class="text-xs text-gray-500">January 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card" data-car="Lamborghini">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="font-bold text-lg">Lamborghini Huracán</h3>
+            <p class="text-gray-500 text-sm">Arjun M. · Hyderabad</p>
+          </div>
+          <div class="stars text-base">★★★★★</div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          Every single drive feels like an event. The naturally aspirated V10 screams to 8,500 RPM and the looks turn heads everywhere. Pure supercar drama.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-petrol">Supercar</span>
+          <span class="text-xs text-gray-500">April 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card" data-car="Porsche">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="font-bold text-lg">Porsche Taycan Turbo S</h3>
+            <p class="text-gray-500 text-sm">Priya N. · Chennai</p>
+          </div>
+          <div class="stars text-base">★★★★★</div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          Best of both worlds — electric performance with Porsche precision. The handling is phenomenal and the cabin is a masterclass in luxury.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-hybrid">EV</span>
+          <span class="text-xs text-gray-500">March 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card" data-car="BMW M4">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="font-bold text-lg">BMW M4 Competition</h3>
+            <p class="text-gray-500 text-sm">Suresh L. · Pune</p>
+          </div>
+          <div class="stars text-base">★★★★☆</div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+          Track monster in disguise. The adaptive M suspension and carbon fibre bucket seats make you feel connected to every apex. Daily usability is surprisingly good too.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-petrol">Track</span>
+          <span class="text-xs text-gray-500">April 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WRITE A REVIEW CTA -->
+  <section class="bg-zinc-950 border-t border-zinc-800 px-10 py-16 text-center">
+    <h2 class="text-3xl font-black mb-3">Share Your Experience</h2>
+    <p class="text-gray-400 mb-8">Have you driven one of these machines? Tell the world.</p>
+    <a href="contact.html" class="btn-primary px-10 py-4 rounded-full font-bold inline-block">Write a Review</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 border-t border-zinc-800 px-10 py-8">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-black text-orange-500 tracking-widest logo">DRIFTMODES</h2>
+      <p class="text-gray-500 text-sm">© 2026 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterReviews(car, btn) {
+      document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.review-card').forEach(card => {
+        if (car === 'all' || card.dataset.car === car) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

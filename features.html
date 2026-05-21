@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Features – DRIFTMODES</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* Force selects dark — Tailwind can't override OS-native dropdown bg */
+    select        { color-scheme: dark; }
+    select option { background: #18181b; color: #ffffff; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- NAVBAR -->
+  <nav class="navbar flex justify-between items-center px-10 py-5 sticky top-0 z-50 border-b border-zinc-800">
+    <a href="index.html"><h1 class="logo text-3xl font-black text-orange-500 tracking-widest">DRIFTMODES</h1></a>
+    <ul class="flex gap-8 text-sm font-semibold tracking-wider uppercase">
+            <li><a href="index.html" class="nav-link active-link">Home</a></li>
+            <li><a href="filters.html" class="nav-link">Filters</a></li>
+            <li><a href="cars.html" class="nav-link">Cars</a></li>
+            <li><a href="speed-comparison.html" class="nav-link">Speed Comp</a></li>
+            <li><a href="features.html" class="nav-link">Car Features</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero text-center">
+    <p class="text-orange-500 text-sm tracking-[0.4em] uppercase mb-3 font-semibold">Spec by Spec</p>
+    <h1 class="text-6xl font-black mb-4" style="font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;">
+      Car Feature Comparison
+    </h1>
+    <p class="text-gray-400 text-lg max-w-xl mx-auto">Every spec, every feature — side by side</p>
+  </div>
+
+  <!-- CAR SELECTOR -->
+  <section class="bg-zinc-950 px-10 py-12 border-b border-zinc-800">
+    <div class="text-center mb-6">
+      <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Choose 3 Cars to Compare</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+
+      <div>
+        <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-500 text-center">Car 1</label>
+        <select id="car1" onchange="updateComparison()"
+          class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white border border-zinc-700
+                 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20
+                 transition-all duration-200 text-sm font-semibold cursor-pointer appearance-none text-center">
+          <option value="bmw">BMW M4</option>
+          <option value="tesla">Tesla Model S</option>
+          <option value="mustang">Ford Mustang GT</option>
+          <option value="lambo">Lamborghini Huracán</option>
+          <option value="porsche">Porsche Taycan</option>
+          <option value="merc">Mercedes GLE</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-500 text-center">Car 2</label>
+        <select id="car2" onchange="updateComparison()"
+          class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white border border-zinc-700
+                 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20
+                 transition-all duration-200 text-sm font-semibold cursor-pointer appearance-none text-center">
+          <option value="bmw">BMW M4</option>
+          <option value="tesla" selected>Tesla Model S</option>
+          <option value="mustang">Ford Mustang GT</option>
+          <option value="lambo">Lamborghini Huracán</option>
+          <option value="porsche">Porsche Taycan</option>
+          <option value="merc">Mercedes GLE</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block mb-2 text-xs font-bold uppercase tracking-widest text-gray-500 text-center">Car 3</label>
+        <select id="car3" onchange="updateComparison()"
+          class="w-full px-4 py-3 rounded-xl bg-zinc-800 text-white border border-zinc-700
+                 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20
+                 transition-all duration-200 text-sm font-semibold cursor-pointer appearance-none text-center">
+          <option value="bmw">BMW M4</option>
+          <option value="tesla">Tesla Model S</option>
+          <option value="mustang" selected>Ford Mustang GT</option>
+          <option value="lambo">Lamborghini Huracán</option>
+          <option value="porsche">Porsche Taycan</option>
+          <option value="merc">Mercedes GLE</option>
+        </select>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="px-10 py-16 bg-black">
+    <div class="text-center mb-10">
+      <p class="text-orange-500 text-sm tracking-[0.4em] uppercase mb-2 font-semibold">Full Breakdown</p>
+      <h2 class="text-4xl font-black" style="font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;">
+        Spec Comparison Table
+      </h2>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl border border-zinc-800 shadow-2xl">
+      <table class="w-full text-center" id="compareTable">
+        <thead>
+          <tr class="bg-orange-500 text-black">
+            <th class="text-left pl-8 py-5 font-black text-sm uppercase tracking-wider w-44">Feature</th>
+            <th id="h1" class="py-5 font-black text-sm uppercase tracking-wider">BMW M4</th>
+            <th id="h2" class="py-5 font-black text-sm uppercase tracking-wider">Tesla Model S</th>
+            <th id="h3" class="py-5 font-black text-sm uppercase tracking-wider">Ford Mustang</th>
+          </tr>
+        </thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CAR HIGHLIGHT CARDS -->
+  <section class="px-10 py-16 bg-zinc-950">
+    <div class="text-center mb-12">
+      <p class="text-orange-500 text-sm tracking-[0.4em] uppercase mb-2 font-semibold">Deep Dive</p>
+      <h2 class="text-4xl font-black" style="font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;">
+        Car Highlights
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- BMW -->
+      <div class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 car-card">
+        <div class="relative overflow-hidden h-52">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop"
+               class="w-full h-full object-cover card-img" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="badge badge-petrol">Petrol</span>
+          </div>
+          <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">503 HP</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-black mb-4 text-center">BMW M4 Competition</h3>
+          <ul class="text-sm space-y-3">
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Engine</span>
+              <span class="text-white font-semibold">3.0L Twin-Turbo I6</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Power</span>
+              <span class="text-orange-500 font-black">503 HP</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Torque</span>
+              <span class="text-white font-semibold">650 Nm</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Transmission</span>
+              <span class="text-white font-semibold">8-Spd Auto</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Drive</span>
+              <span class="text-white font-semibold">xDrive AWD</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-zinc-400">Infotainment</span>
+              <span class="text-white font-semibold">12.3" iDrive 8</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tesla -->
+      <div class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 car-card">
+        <div class="relative overflow-hidden h-52">
+          <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=1200&auto=format&fit=crop"
+               class="w-full h-full object-cover card-img" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="badge badge-electric">Electric</span>
+          </div>
+          <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">1,020 HP</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-black mb-4 text-center">Tesla Model S Plaid</h3>
+          <ul class="text-sm space-y-3">
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Motors</span>
+              <span class="text-white font-semibold">Tri-Motor Electric</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Power</span>
+              <span class="text-orange-500 font-black">1,020 HP</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Range</span>
+              <span class="text-white font-semibold">628 km</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Charge (DC)</span>
+              <span class="text-white font-semibold">250 kW</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Drive</span>
+              <span class="text-white font-semibold">AWD</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-zinc-400">Screen</span>
+              <span class="text-white font-semibold">17" Landscape</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mustang -->
+      <div class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 car-card">
+        <div class="relative overflow-hidden h-52">
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop"
+               class="w-full h-full object-cover card-img" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="badge badge-petrol">Petrol</span>
+          </div>
+          <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">450 HP</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-black mb-4 text-center">Ford Mustang GT</h3>
+          <ul class="text-sm space-y-3">
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Engine</span>
+              <span class="text-white font-semibold">5.0L V8</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Power</span>
+              <span class="text-orange-500 font-black">450 HP</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Torque</span>
+              <span class="text-white font-semibold">529 Nm</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Transmission</span>
+              <span class="text-white font-semibold">6-Spd Manual</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-zinc-800 pb-2">
+              <span class="text-zinc-400">Drive</span>
+              <span class="text-white font-semibold">RWD</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-zinc-400">Infotainment</span>
+              <span class="text-white font-semibold">12" SYNC 4</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 border-t border-zinc-800 px-10 py-8">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-black text-orange-500 tracking-widest logo">DRIFTMODES</h2>
+      <p class="text-gray-500 text-sm">© 2026 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    const carData = {
+      bmw:     { name:"BMW M4",               price:"₹85L",    fuel:"Petrol",   power:"503 HP",   torque:"650 Nm",   top:"290 km/h", accel:"3.9s", weight:"1,725 kg", seats:"4", safety:"5★ NCAP",  autopilot:"❌", sunroof:"✅", sound:"Harman Kardon",  warranty:"3 yrs" },
+      tesla:   { name:"Tesla Model S",        price:"₹1.2Cr",  fuel:"Electric", power:"1,020 HP", torque:"1,420 Nm", top:"322 km/h", accel:"2.1s", weight:"2,162 kg", seats:"5", safety:"5★ NHTSA", autopilot:"✅", sunroof:"✅", sound:"Premium 22-spk", warranty:"4 yrs" },
+      mustang: { name:"Ford Mustang GT",      price:"₹75L",    fuel:"Petrol",   power:"450 HP",   torque:"529 Nm",   top:"250 km/h", accel:"4.3s", weight:"1,760 kg", seats:"4", safety:"4★ NCAP",  autopilot:"❌", sunroof:"✅", sound:"B&O Premium",    warranty:"3 yrs" },
+      lambo:   { name:"Lamborghini Huracán",  price:"₹1.8Cr",  fuel:"Petrol",   power:"630 HP",   torque:"600 Nm",   top:"325 km/h", accel:"2.9s", weight:"1,422 kg", seats:"2", safety:"N/A",       autopilot:"❌", sunroof:"❌", sound:"Alpine",         warranty:"2 yrs" },
+      porsche: { name:"Porsche Taycan",       price:"₹1.5Cr",  fuel:"Electric", power:"761 HP",   torque:"1,050 Nm", top:"260 km/h", accel:"2.8s", weight:"2,305 kg", seats:"5", safety:"5★ Euro",   autopilot:"⚠️", sunroof:"✅", sound:"BOSE Surround",  warranty:"4 yrs" },
+      merc:    { name:"Mercedes GLE",         price:"₹95L",    fuel:"Diesel",   power:"330 HP",   torque:"700 Nm",   top:"230 km/h", accel:"5.7s", weight:"2,195 kg", seats:"7", safety:"5★ Euro",   autopilot:"⚠️", sunroof:"✅", sound:"Burmester",      warranty:"3 yrs" },
+    };
+
+    const rows = [
+      { label:"💰 Price",          key:"price"     },
+      { label:"⛽ Fuel Type",       key:"fuel"      },
+      { label:"⚡ Power",           key:"power"     },
+      { label:"🔩 Torque",          key:"torque"    },
+      { label:"🏎️ Top Speed",       key:"top"       },
+      { label:"⏱️ 0–100 km/h",     key:"accel"     },
+      { label:"⚖️ Weight",          key:"weight"    },
+      { label:"🪑 Seats",           key:"seats"     },
+      { label:"🛡️ Safety Rating",   key:"safety"    },
+      { label:"🤖 Autopilot",       key:"autopilot" },
+      { label:"🌞 Sunroof",         key:"sunroof"   },
+      { label:"🔊 Sound System",    key:"sound"     },
+      { label:"📅 Warranty",        key:"warranty"  },
+    ];
+
+    function updateComparison() {
+      const d1 = carData[document.getElementById('car1').value];
+      const d2 = carData[document.getElementById('car2').value];
+      const d3 = carData[document.getElementById('car3').value];
+
+      document.getElementById('h1').textContent = d1.name;
+      document.getElementById('h2').textContent = d2.name;
+      document.getElementById('h3').textContent = d3.name;
+
+      const tbody = document.getElementById('compareBody');
+      tbody.innerHTML = '';
+
+      rows.forEach((row, i) => {
+        const tr   = document.createElement('tr');
+        const dark = i % 2 === 0;
+        const bg   = dark ? 'background:#18181b' : 'background:#111113';
+        tr.innerHTML = `
+          <td class="text-left pl-8 py-4 text-zinc-400 font-semibold text-xs uppercase tracking-wider" style="${bg}">${row.label}</td>
+          <td class="py-4 text-white font-medium text-sm" style="${bg}">${d1[row.key]}</td>
+          <td class="py-4 text-white font-medium text-sm" style="${bg}">${d2[row.key]}</td>
+          <td class="py-4 text-white font-medium text-sm" style="${bg}">${d3[row.key]}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    updateComparison();
+  </script>
+</body>
+</html>
