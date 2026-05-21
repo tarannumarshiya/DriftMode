@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Ratings – DRIFTMODES</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .card-hover {
+            transition: 0.4s;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+
+    <nav class="flex justify-between items-center px-10 py-5 bg-zinc-900 sticky top-0 z-50">
+        <h1 class="text-3xl font-bold text-orange-500">
+            <a href="index.html">DRIFTMODES</a>
+        </h1>
+
+       <ul class="flex gap-8 text-lg">
+            <li><a href="index.html" class="nav-link active-link">Home</a></li>
+            <li><a href="filters.html" class="nav-link">Filters</a></li>
+            <li><a href="cars.html" class="nav-link">Cars</a></li>
+            <li><a href="speed-comparison.html" class="nav-link">compare</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="text-center py-20 px-5 bg-zinc-950 border-b border-zinc-900">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-orange-500 uppercase tracking-widest text-sm font-semibold mb-3">Real Owners. Real Opinions.</p>
+            <h1 class="text-5xl font-bold mb-5">Reviews & Ratings</h1>
+            <p class="text-gray-400 text-lg font-light">
+                Honest feedback and hands-on track notes from car enthusiasts around the world.
+            </p>
+        </div>
+    </header>
+
+    <section class="px-10 py-16 bg-black">
+        <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+            
+            <div class="bg-zinc-900 rounded-2xl p-8 text-center flex flex-col justify-center items-center border border-zinc-800">
+                <div class="text-6xl font-bold text-orange-500 mb-2">4.7</div>
+                <div class="text-orange-500 text-xl tracking-wider mb-2">★★★★★</div>
+                <p class="text-gray-300 font-medium">Overall Community Score</p>
+                <p class="text-gray-500 text-xs mt-2 uppercase tracking-wide">10,240 verified ratings</p>
+            </div>
+
+            <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+                <h3 class="font-bold mb-5 text-sm uppercase tracking-wider text-gray-400">Rating Breakdown</h3>
+                <div class="space-y-3.5">
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm text-gray-400 w-5">5★</span>
+                        <div class="bg-zinc-950 h-2 flex-1 rounded-full overflow-hidden">
+                            <div class="bg-orange-500 h-full rounded-full" style="width: 72%"></div>
+                        </div>
+                        <span class="text-sm text-gray-400 w-8 text-right">72%</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm text-gray-400 w-5">4★</span>
+                        <div class="bg-zinc-950 h-2 flex-1 rounded-full overflow-hidden">
+                            <div class="bg-orange-500 h-full rounded-full" style="width: 18%"></div>
+                        </div>
+                        <span class="text-sm text-gray-400 w-8 text-right">18%</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm text-gray-400 w-5">3★</span>
+                        <div class="bg-zinc-950 h-2 flex-1 rounded-full overflow-hidden">
+                            <div class="bg-orange-500 h-full rounded-full" style="width: 7%"></div>
+                        </div>
+                        <span class="text-sm text-gray-400 w-8 text-right">7%</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm text-gray-400 w-5">2★</span>
+                        <div class="bg-zinc-950 h-2 flex-1 rounded-full overflow-hidden">
+                            <div class="bg-orange-500 h-full rounded-full" style="width: 3%"></div>
+                        </div>
+                        <span class="text-sm text-gray-400 w-8 text-right">3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800">
+                <h3 class="font-bold mb-5 text-sm uppercase tracking-wider text-gray-400">Performance Attributes</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-sm text-gray-400">Power Delivery</span><span class="text-orange-500 font-bold">4.9 / 5</span></div>
+                    <div class="flex justify-between items-center"><span class="text-sm text-gray-400">Handling Control</span><span class="text-orange-500 font-bold">4.8 / 5</span></div>
+                    <div class="flex justify-between items-center"><span class="text-sm text-gray-400">Cabin Comfort</span><span class="text-orange-500 font-bold">4.4 / 5</span></div>
+                    <div class="flex justify-between items-center"><span class="text-sm text-gray-400">Tech & Cockpit</span><span class="text-orange-500 font-bold">4.6 / 5</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-4 mb-12 flex-wrap items-center justify-center">
+            <span class="text-sm font-semibold uppercase tracking-wider text-gray-400 mr-2">Quick Navigation:</span>
+            <button class="px-6 py-2 rounded-full text-sm font-medium border border-orange-500 bg-orange-500 text-black duration-300 transition-all" onclick="filterReviews('all', this)">All</button>
+            <button class="px-6 py-2 rounded-full text-sm font-medium border border-zinc-700 text-gray-300 hover:border-orange-500 hover:text-white duration-300 transition-all" onclick="filterReviews('BMW', this)">BMW M4</button>
+            <button class="px-6 py-2 rounded-full text-sm font-medium border border-zinc-700 text-gray-300 hover:border-orange-500 hover:text-white duration-300 transition-all" onclick="filterReviews('Tesla', this)">Tesla Model S</button>
+            <button class="px-6 py-2 rounded-full text-sm font-medium border border-zinc-700 text-gray-300 hover:border-orange-500 hover:text-white duration-300 transition-all" onclick="filterReviews('Ford', this)">Ford Mustang</button>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto" id="reviewsContainer">
+            
+            <div class="review-item bg-zinc-900 p-8 rounded-2xl border border-zinc-800 card-hover flex flex-col justify-between" data-brand="BMW">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">BMW M4</h3>
+                            <p class="text-xs text-gray-500 uppercase mt-0.5">Verified Owner &middot; Rohit S.</p>
+                        </div>
+                        <span class="text-orange-500 tracking-wider">★★★★★</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">
+                        "The M4 is an absolute beast on the road. The twin-turbo inline-6 pulls like a freight train and the cornering dynamics are incredibly razor sharp. Worth every single rupee if you value driving enjoyment."
+                    </p>
+                </div>
+                <div class="border-t border-zinc-800 pt-4 mt-6 flex justify-between text-xs text-gray-500 uppercase">
+                    <span>Fuel: Petrol</span>
+                    <span>March 2026</span>
+                </div>
+            </div>
+
+            <div class="review-item bg-zinc-900 p-8 rounded-2xl border border-zinc-800 card-hover flex flex-col justify-between" data-brand="Tesla">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Tesla Model S</h3>
+                            <p class="text-xs text-gray-500 uppercase mt-0.5">Verified Owner &middot; Ananya K.</p>
+                        </div>
+                        <span class="text-orange-500 tracking-wider">★★★★★</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">
+                        "Insane structural acceleration, immaculate cockpit interfaces, and autopilot features are genuinely impressive. Range anxiety is gone with over 600km of real-world range on a single full charge."
+                    </p>
+                </div>
+                <div class="border-t border-zinc-800 pt-4 mt-6 flex justify-between text-xs text-gray-500 uppercase">
+                    <span>Fuel: Electric</span>
+                    <span>February 2026</span>
+                </div>
+            </div>
+
+            <div class="review-item bg-zinc-900 p-8 rounded-2xl border border-zinc-800 card-hover flex flex-col justify-between" data-brand="Ford">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Ford Mustang</h3>
+                            <p class="text-xs text-gray-500 uppercase mt-0.5">Verified Owner &middot; Vikram P.</p>
+                        </div>
+                        <span class="text-orange-500 tracking-wider">★★★★☆</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed text-sm font-light">
+                        "Nothing beats that authentic V8 rumble down low. The Mustang delivers premium visual muscle presence anywhere you drive it. Cabin electronics could feel slightly more premium, but the rumble makes you forget that."
+                    </p>
+                </div>
+                <div class="border-t border-zinc-800 pt-4 mt-6 flex justify-between text-xs text-gray-500 uppercase">
+                    <span>Fuel: Petrol</span>
+                    <span>January 2026</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 text-center py-6 border-t border-zinc-900">
+        <h2 class="text-2xl font-bold text-orange-500 mb-3">
+            DRIFTMODES
+        </h2>
+        <p class="text-gray-400 text-sm">
+            &copy; 2026 All Rights Reserved
+        </p>
+    </footer>
+
+    <script>
+        function filterReviews(brand, currentButton) {
+            // Manage Active Class States on Control Buttons
+            const tabButtons = currentButton.parentElement.querySelectorAll('button');
+            tabButtons.forEach(button => {
+                button.classList.remove('bg-orange-500', 'text-black', 'border-orange-500');
+                button.classList.add('border-zinc-700', 'text-gray-300');
+            });
+            
+            currentButton.classList.add('bg-orange-500', 'text-black', 'border-orange-500');
+            currentButton.classList.remove('border-zinc-700', 'text-gray-300');
+
+            // Apply Visibility Filtering Rules
+            const reviewCards = document.querySelectorAll('.review-item');
+            reviewCards.forEach(card => {
+                if (brand === 'all' || card.dataset.brand === brand) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
