@@ -1,112 +1,224 @@
-/* Google Font */
+/* =========================
+   TAILWIND CUSTOM CSS
+========================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   GOOGLE FONT
+========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+/* =========================
+   GLOBAL STYLES
+========================= */
 
-/* Smooth Scroll */
-html{
+@layer base {
+
+  *{
+    @apply m-0 p-0 box-border;
+  }
+
+  body{
+    font-family: 'Poppins', sans-serif;
+    @apply bg-black text-white overflow-x-hidden;
+  }
+
+  html{
     scroll-behavior: smooth;
+  }
+
 }
 
-/* Hero Background */
-.hero{
+/* =========================
+   HERO SECTION
+========================= */
+
+@layer components {
+
+  .hero{
     background:
     linear-gradient(rgba(0,0,0,0.7),
     rgba(0,0,0,0.7)),
     url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1600&auto=format&fit=crop");
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @apply bg-cover bg-center bg-no-repeat;
+  }
+
+  .hero-title{
+    @apply text-6xl font-bold leading-tight;
+  }
+
+  .hero-subtitle{
+    @apply text-gray-300 text-lg mt-4;
+  }
+
 }
 
-/* Hover Animation */
-.card-hover{
-    transition: 0.4s;
+/* =========================
+   NAVBAR
+========================= */
+
+@layer components {
+
+  .navbar{
+    @apply flex items-center justify-between px-10 py-5 bg-black/70 backdrop-blur-md sticky top-0 z-50;
+  }
+
+  .logo{
+    @apply text-3xl font-bold text-orange-500;
+  }
+
+  .nav-links{
+    @apply flex gap-8 text-white font-medium;
+  }
+
+  .nav-links a{
+    @apply transition duration-300 hover:text-orange-500;
+  }
+
 }
 
-.card-hover:hover{
-    transform: translateY(-10px);
+/* =========================
+   BUTTONS
+========================= */
+
+@layer components {
+
+  .custom-btn{
+    @apply bg-orange-500 text-white px-6 py-3 rounded-xl font-semibold transition duration-300;
+  }
+
+  .custom-btn:hover{
+    @apply scale-105 bg-orange-600;
+  }
+
 }
 
-/* Button Hover */
-.custom-btn{
-    transition: 0.3s;
+/* =========================
+   CARDS
+========================= */
+
+@layer components {
+
+  .card{
+    @apply bg-zinc-900 rounded-2xl p-6 shadow-lg;
+  }
+
+  .card-hover{
+    @apply transition duration-300;
+  }
+
+  .card-hover:hover{
+    @apply -translate-y-2;
+  }
+
 }
 
-.custom-btn:hover{
-    transform: scale(1.05);
+/* =========================
+   SEARCH BOX
+========================= */
+
+@layer components {
+
+  .search-box{
+    @apply w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 outline-none transition duration-300;
+  }
+
+  .search-box:focus{
+    @apply border-orange-500 ring-2 ring-orange-500;
+  }
+
 }
 
-/* Search Inputs */
-.search-box{
-    border: 1px solid #27272a;
-    transition: 0.3s;
+/* =========================
+   TABLE STYLING
+========================= */
+
+@layer components {
+
+  .compare-table{
+    @apply w-full border-collapse overflow-hidden rounded-2xl;
+  }
+
+  .compare-table th{
+    @apply bg-orange-500 text-white p-4 text-left;
+  }
+
+  .compare-table td{
+    @apply bg-zinc-900 p-4 border border-zinc-800;
+  }
+
 }
 
-.search-box:focus{
-    border-color: orange;
-    box-shadow: 0px 0px 10px orange;
+/* =========================
+   GALLERY
+========================= */
+
+@layer components {
+
+  .gallery-img{
+    @apply rounded-2xl overflow-hidden transition duration-300;
+  }
+
+  .gallery-img:hover{
+    @apply scale-105;
+  }
+
 }
 
-/* Table Styling */
-.compare-table td,
-.compare-table th{
-    padding: 15px;
+/* =========================
+   FAQ SECTION
+========================= */
+
+@layer components {
+
+  .faq-card{
+    @apply bg-zinc-900 p-5 rounded-2xl transition duration-300;
+  }
+
+  .faq-card:hover{
+    @apply bg-zinc-800;
+  }
+
 }
 
-/* Gallery Hover */
-.gallery-img{
-    transition: 0.4s;
-}
+/* =========================
+   SCROLLBAR
+========================= */
 
-.gallery-img:hover{
-    transform: scale(1.03);
-}
-
-/* FAQ Animation */
-.faq-card{
-    transition: 0.3s;
-}
-
-.faq-card:hover{
-    background-color: #27272a;
-}
-
-/* Scrollbar */
 ::-webkit-scrollbar{
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track{
-    background: black;
+  background: black;
 }
 
 ::-webkit-scrollbar-thumb{
-    background: orange;
-    border-radius: 20px;
+  background: orange;
+  border-radius: 20px;
 }
 
-/* Mobile Responsive */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
 @media(max-width:768px){
 
-    .hero-title{
-        font-size: 40px;
-    }
+  .hero-title{
+    font-size: 40px;
+  }
 
-    .navbar{
-        flex-direction: column;
-        gap: 20px;
-    }
+  .navbar{
+    @apply flex-col gap-5;
+  }
 
-    .nav-links{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .nav-links{
+    @apply flex-wrap justify-center;
+  }
 
 }
